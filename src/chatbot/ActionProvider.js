@@ -44,6 +44,21 @@ class ActionProvider {
       this.updateChatbotState(message)
       this.updateStateCurrent("help");
     }
+
+    handleLoan() {
+      const message = this.createChatBotMessage(
+        `I can help you with that, please select one option`,
+        {
+          widget: "loan",
+        }
+      )
+      this.updateChatbotState(message)
+    }
+
+    handleUnknown() {
+      const message = this.createChatBotMessage(`Sorry, i can't help you with that. Please try again.`)
+      this.updateChatbotState(message)
+    }
  }
  
  export default ActionProvider;

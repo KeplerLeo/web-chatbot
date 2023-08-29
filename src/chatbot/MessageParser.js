@@ -26,6 +26,12 @@ class MessageParser {
         const username = this.creatingPassword(message);
         this.actionProvider.handlePassword(username);
       }
+
+      if (this.state.current === "help" && lowerCase === "loan") {
+        this.actionProvider.handleLoan();
+      } else if (this.state.current === "help") {
+        this.actionProvider.handleUnknown();
+      }
       
     }
 
