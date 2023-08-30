@@ -1,3 +1,4 @@
+import "./ExportMessages.css";
 import { CSVLink } from "react-csv";
 import SecureLS from "secure-ls";
 
@@ -9,7 +10,7 @@ const getUser = () => {
 
 const ExportMessages = () => {
     return (
-        <div>
+        <div className="export-widget">
             <p>Good Bye {getUser()}</p>
             <p>Here is a link with a history of our conversation: </p>
             <CSVLink
