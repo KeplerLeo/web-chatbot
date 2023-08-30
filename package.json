@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-chatbot-kit": "^2.1.2",
+    "react-csv": "^2.2.2",
+    "react-dom": "^18.2.0",
+    "secure-ls": "^1.2.6"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
