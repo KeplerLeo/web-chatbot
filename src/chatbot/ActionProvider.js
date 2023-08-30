@@ -53,11 +53,53 @@ class ActionProvider {
         }
       )
       this.updateChatbotState(message)
+      this.updateStateCurrent("loanOption");
     }
 
     handleUnknown() {
       const message = this.createChatBotMessage(`Sorry, i can't help you with that. Please try again.`)
       this.updateChatbotState(message)
+    }
+
+    handleLoanOption(option) {
+      let message = '';
+
+      switch (option) {
+        case "1":
+          message = this.createChatBotMessage(`Great! Here is a link to help you with a loan:`, {
+            widget: "loanLink",
+          });
+          this.updateChatbotState(message);
+          break;
+        case "2":
+          message = this.createChatBotMessage(`Here are the conditions for a loan:`,
+          {
+            widget: "loanLink",
+          });
+          this.updateChatbotState(message);
+          break;
+        case "3":
+          message = this.createChatBotMessage(`If you need help, please contact us at: 0-000-000-0000 or access our website:`,
+          {
+            widget: "loanLink",
+          });
+          this.updateChatbotState(message);
+          break;
+      }
+      message = this.createChatBotMessage(`How else can I help you?`, {
+        widget: "loan",
+        });
+      this.updateChatbotState(message);
+      this.updateStateCurrent("loanOption");
+    }
+
+    handleGoodbye() {
+      const message = this.createChatBotMessage(`Thanks for your time, have a nice day!`,
+      {
+        widget: "goodbye",
+      })
+      this.updateChatbotState(message)
+      this.updateStateCurrent("goodbye");
     }
  }
  

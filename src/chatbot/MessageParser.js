@@ -13,6 +13,11 @@ class MessageParser {
       const initialKeywords = ["hello", "good", "i want"];
       const lowerCase = message.toLowerCase();
 
+      if (lowerCase === "goodbye") {
+        this.actionProvider.handleGoodbye();
+        return;
+      }
+
       if (initialKeywords.some((keyword) => lowerCase.includes(keyword))) {
         this.actionProvider.greet();
       }
@@ -31,6 +36,10 @@ class MessageParser {
         this.actionProvider.handleLoan();
       } else if (this.state.current === "help") {
         this.actionProvider.handleUnknown();
+      }
+
+      if (this.state.current === "loanOption") {
+        this.actionProvider.handleLoanOption(lowerCase);
       }
       
     }

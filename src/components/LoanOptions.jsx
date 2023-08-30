@@ -1,11 +1,7 @@
 import './LoanOptions.css'
 
 const LoanOptions = () => {
-    const loanOptions = ["Do you want to apply for a loan?", "Loan conditions", "Help"];
-
-    const onLoanOptionSelect = (loanOption) => {
-        console.log("Loan option selected", loanOption);
-    };
+    const loanOptions = ["1: Do you want to apply for a loan?", "2: Loan conditions", "3: Help"];
     
     return (
         <div className="loan-options">
@@ -14,9 +10,8 @@ const LoanOptions = () => {
                 {loanOptions.map((loanOption, index) => (
                     <li
                         key={index}
-                        onClick={() => onLoanOptionSelect(loanOption)}
                     >
-                        <a href="#">{loanOption}</a>
+                        {loanOption}
                     </li>
                 ))}
             </ul>
